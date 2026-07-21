@@ -5,6 +5,18 @@ import { StatusBar } from 'expo-status-bar';
 import MainTabNavigator from './src/navigation/MainTabNavigator';
 import { FavoritesProvider } from './src/context/FavoritesContext';
 import { theme } from './src/theme';
+import { Platform } from 'react-native';
+
+if (Platform.OS === 'web') {
+  const style = document.createElement('style');
+  style.textContent = `
+    html, body, #root {
+      overflow: auto !important;
+      height: auto !important;
+    }
+  `;
+  document.head.appendChild(style);
+}
 
 const NavigationTheme = {
   ...DefaultTheme,
