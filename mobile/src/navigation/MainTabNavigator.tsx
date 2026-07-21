@@ -26,7 +26,13 @@ const Stack = createStackNavigator<HomeStackParamList>();
 
 function HomeStack() {
   return (
-    <Stack.Navigator id="home-stack" screenOptions={{ headerShown: false }}>
+    <Stack.Navigator
+      id="home-stack"
+      screenOptions={{
+        headerShown: false,
+        cardStyle: { flex: 1, overflow: 'visible' },
+      }}
+    >
       <Stack.Screen name="HomeMain" component={HomeScreen} />
       <Stack.Screen name="ComplexDetail" component={ComplexDetailScreen} />
     </Stack.Navigator>
