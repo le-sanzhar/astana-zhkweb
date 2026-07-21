@@ -282,6 +282,7 @@ export default function HomeScreen({ navigation }: any) {
 
       <ScrollView
         showsVerticalScrollIndicator={false}
+        style={{ flex: 1 }}
         contentContainerStyle={styles.scrollContent}
       >
         <View style={styles.headerRow}>

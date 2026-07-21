@@ -52,7 +52,11 @@ export default function FavoritesScreen({ navigation }: any) {
 
   return (
     <SafeAreaView style={styles.container} edges={['top']}>
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{ flex: 1 }}
+        contentContainerStyle={styles.scrollContent}
+      >
         <View style={styles.header}>
           <Text style={styles.title}>Избранное</Text>
           <Text style={styles.subtitle}>{complexes.length} объект{complexes.length !== 1 ? 'ов' : ''}</Text>
