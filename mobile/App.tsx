@@ -10,9 +10,26 @@ import { Platform } from 'react-native';
 if (Platform.OS === 'web') {
   const style = document.createElement('style');
   style.textContent = `
-    html, body, #root {
+    html {
       overflow: auto !important;
       height: auto !important;
+    }
+    body {
+      overflow: auto !important;
+      height: auto !important;
+      min-height: 100vh;
+    }
+    #root {
+      overflow: auto !important;
+      height: auto !important;
+    }
+    /* Override React Native Web's inline overflow:hidden on wrapper divs */
+    #root > div,
+    #root > div > div,
+    #root > div > div > div {
+      overflow: visible !important;
+      height: auto !important;
+      min-height: auto !important;
     }
   `;
   document.head.appendChild(style);
